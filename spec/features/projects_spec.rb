@@ -19,7 +19,6 @@ RSpec.feature "Projects", type: :feature do
       click_button "Create Project"
       expect(page).to have_content("Description can't be blank")
     end
-
   end
 
   context "Update project" do
@@ -36,7 +35,6 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content("Project was successfully updated")
     end
 
-
     scenario "should fail" do
       within("form") do
         fill_in "Description", with: ""
@@ -44,8 +42,6 @@ RSpec.feature "Projects", type: :feature do
       click_button "Update Project"
       expect(page).to have_content("Description can't be blank")
     end
-
-
   end
 
   context "Remove existing project" do
@@ -57,6 +53,4 @@ RSpec.feature "Projects", type: :feature do
       expect(Project.count).to eq(0)
     end
   end
-
-
 end
