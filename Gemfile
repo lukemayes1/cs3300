@@ -79,3 +79,6 @@ end
 group :development, :test do
   gem 'capybara'
 end
+
+# Use Devise for authentication
+gem 'devise'
