@@ -82,3 +82,8 @@ end
 
 # Use Devise for authentication
 gem 'devise'
+
+# Use Bootstrap for front-end
+gem 'bootstrap', '~> 4.6.1'
+gem 'sassc', '~> 2.1.0'
+gem 'jquery-rails'
