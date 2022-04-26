@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Luke Mayes Portfolio</title>
+	
+	  <!-- Bootstrap core CSS -->
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+  </head>
+
+  
+  <body style="margin: 100px;padding:0">
+    <!-- Navbar -->
+    <div class= "navbar fixed-top">
+      <nav class="navbar ml-auto navbar-inverse navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand nav-link mr-auto" href="#">Luke Mayes Portfolio</a>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Edit</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="cover jumbotron">
+      <div class="container">
+        <h1 class="display-3">Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <% @projects.each do |projects| %>
+    <div class="row">
+      <div class="col-md-6">
+        <h2><%@projects.title%></h2>
+        <p><%@projects.description%></p>
+      </div>
+      <div class="col-md-6">
+        <p><%@projects.description%></p>
+        <%= link_to 'Edit', edit_project_path(@projects[(i*3)+2]) %> |
+        <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure you want to delete this project?' } %>
+      </div>
+    </div>
+    <% end %>
+
+
+  </body>
+</html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" ></script>
